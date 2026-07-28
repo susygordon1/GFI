@@ -522,6 +522,357 @@ nav.mainnav a.active{
   fill:#fff;
 }
 
+/* ---------- Team rosters (10 per leader) ---------- */
+.roster-section{margin-top:56px;}
+.roster-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+@media (max-width:820px){.roster-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+
+.roster-column{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px 18px 22px;
+}
+.roster-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding-bottom:14px;
+  margin-bottom:14px;
+  border-bottom:1px solid var(--line);
+}
+.roster-header img{
+  width:44px;height:44px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.roster-header h3{
+  font-family:var(--font-display);
+  font-size:15px;
+  color:var(--navy);
+  margin:0;
+  letter-spacing:.3px;
+}
+.roster-header .roster-count{
+  font-size:11px;
+  color:var(--slate);
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+.roster-list{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+.roster-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:13.5px;
+  color:var(--ink);
+  padding:6px 4px;
+  border-radius:6px;
+}
+.roster-item:hover{background:var(--bg);}
+.roster-avatar{
+  width:30px;height:30px;
+  min-width:30px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:11px;
+  font-weight:600;
+}
+.roster-column.col-andrew .roster-avatar{background:linear-gradient(135deg,#1E4FD8,#4E7CFF);}
+.roster-column.col-tony .roster-avatar{background:linear-gradient(135deg,#0F9D57,#33C77E);}
+.roster-column.col-sergio .roster-avatar{background:linear-gradient(135deg,#6C4FF0,#8A6CF2);}
+
+/* ---------- Meet the Team ---------- */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+@media (max-width:820px){.team-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto;}}
+
+.team-card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  aspect-ratio:380/550;
+  box-shadow:0 16px 30px -16px rgba(10,26,60,.4);
+}
+.team-card img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.team-overlay{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:22px 20px 20px;
+  background:linear-gradient(180deg,transparent,rgba(6,17,39,.92) 72%);
+  color:#fff;
+}
+.team-overlay h3{
+  font-family:var(--font-display);
+  font-size:21px;
+  letter-spacing:.5px;
+  margin:0 0 3px;
+}
+.team-overlay .team-role{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+  margin:0;
+}
+
+/* ---------- Recognitions leaderboard ---------- */
+.leaderboard{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+  margin-bottom:8px;
+}
+.lb-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 20px 20px;
+  text-align:center;
+  width:200px;
+  box-shadow:0 10px 22px -16px rgba(10,26,60,.35);
+  position:relative;
+}
+.lb-card.rank-1{
+  width:224px;
+  padding-top:34px;
+  border:2px solid var(--gold);
+  transform:translateY(-14px);
+  box-shadow:0 18px 30px -14px rgba(201,162,39,.45);
+}
+.lb-crown{
+  position:absolute;
+  top:-22px;left:50%;
+  transform:translateX(-50%);
+  font-size:26px;
+}
+.lb-photo{
+  width:88px;height:88px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:0 auto 12px;
+  border:3px solid var(--gold);
+  display:block;
+}
+.lb-card.rank-1 .lb-photo{width:104px;height:104px;}
+.lb-placeholder-photo{
+  width:88px;height:88px;
+  border-radius:50%;
+  margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  background:#EDF1F9;
+  border:2px dashed var(--slate-light);
+  color:var(--slate-light);
+}
+.lb-rank{
+  font-family:var(--font-display);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+.lb-card h3{
+  font-family:var(--font-display);
+  font-size:16px;
+  color:var(--navy);
+  margin:0 0 4px;
+}
+.lb-amount{
+  font-family:var(--font-display);
+  font-size:22px;
+  color:var(--navy);
+  font-weight:600;
+  margin:6px 0 2px;
+}
+.lb-card .lb-note{
+  font-size:11.5px;
+  color:var(--slate);
+  margin:0;
+}
+
+/* ---------- Welcome card (new agent) ---------- */
+.welcome-card{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:22px;
+  align-items:center;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-left:4px solid var(--blue);
+  border-radius:10px;
+  padding:20px 24px;
+}
+@media (max-width:560px){.welcome-card{grid-template-columns:1fr;text-align:center;}}
+.welcome-card img{
+  width:100%;
+  border-radius:8px;
+  object-fit:cover;
+}
+.welcome-card .welcome-kicker{
+  font-family:var(--font-display);
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:6px;
+}
+.welcome-card h3{
+  font-family:var(--font-display);
+  font-size:19px;
+  color:var(--navy);
+  margin:0 0 6px;
+}
+.welcome-card p{margin:0;font-size:14px;color:var(--slate);}
+
+/* ---------- Real event card (with flyer image) ---------- */
+.real-event-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px;
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:22px;
+  align-items:center;
+}
+@media (max-width:640px){.real-event-card{grid-template-columns:1fr;}}
+.real-event-card img{
+  width:100%;
+  border-radius:8px;
+  display:block;
+}
+.real-event-card .re-tag{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-family:var(--font-display);
+  background:rgba(201,162,39,.15);
+  color:var(--gold);
+  padding:3px 8px;
+  border-radius:4px;
+  margin-bottom:8px;
+}
+.real-event-card h3{
+  font-family:var(--font-display);
+  font-size:19px;
+  color:var(--navy);
+  margin:0 0 8px;
+}
+.real-event-card .re-meta{
+  font-size:13.5px;
+  color:var(--slate);
+  margin:0 0 12px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.real-event-card .re-rsvp{
+  font-size:13.5px;
+  color:var(--slate);
+}
+.real-event-card .re-rsvp a{
+  color:var(--blue);
+  font-weight:600;
+}
+
+/* ---------- Recognitions ---------- */
+.recognition-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media (max-width:820px){.recognition-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.recognition-grid{grid-template-columns:1fr;}}
+
+.recognition-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 10px 22px -16px rgba(10,26,60,.35);
+}
+.recognition-badge{
+  width:58px;height:58px;
+  border-radius:50%;
+  margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 30% 25%,#FCE7B8,#C9A227);
+  box-shadow:0 8px 16px -6px rgba(0,0,0,.35);
+}
+.recognition-card h3{
+  font-family:var(--font-display);
+  font-size:16px;
+  letter-spacing:.5px;
+  color:var(--navy);
+  margin:0 0 4px;
+}
+.recognition-card .rec-title{
+  font-size:11.5px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:600;
+  margin:0 0 10px;
+}
+.recognition-card p.rec-note{
+  font-size:13.5px;
+  color:var(--slate);
+  margin:0;
+}
+
+/* ---------- Announcements feed ---------- */
+.feed-list{display:flex;flex-direction:column;gap:14px;}
+.feed-item{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-left:4px solid var(--gold);
+  border-radius:8px;
+  padding:18px 22px;
+}
+.feed-item .feed-date{
+  font-family:var(--font-display);
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+.feed-item h3{
+  font-family:var(--font-display);
+  font-size:16px;
+  color:var(--navy);
+  margin:0 0 6px;
+  letter-spacing:.3px;
+}
+.feed-item p{
+  margin:0;
+  font-size:14px;
+  color:var(--slate);
+}
+
 /* ---------- Category section (What We Sell) ---------- */
 .category-section{
   max-width:1180px;

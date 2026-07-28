@@ -46,6 +46,32 @@ a{color:inherit;text-decoration:none;}
   align-items:center;
   justify-content:space-between;
   height:64px;
+  gap:20px;
+}
+.topbar-right{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+  color:var(--navy-deep) !important;
+  font-family:var(--font-display);
+  font-size:13px;
+  letter-spacing:.5px;
+  font-weight:600;
+  padding:9px 16px;
+  border-radius:24px;
+  white-space:nowrap;
+  box-shadow:0 6px 14px -6px rgba(0,0,0,.5);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.call-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 18px -6px rgba(0,0,0,.55);
 }
 .brand{
   display:flex;
@@ -132,25 +158,37 @@ nav.mainnav a.active{
   display:block;
 }
 
-.hero-contact{
+/* ---------- Pillar ticker (replaces phone strip) ---------- */
+.ticker-wrap{
   background:var(--navy-deep);
   border-top:1px solid rgba(255,255,255,.08);
-  color:#D8DEEC;
-  display:flex;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  white-space:nowrap;
+  padding:13px 0;
+}
+.ticker-track{
+  display:inline-flex;
   align-items:center;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  padding:14px 20px;
-  font-size:14px;
+  animation:ticker-scroll 26s linear infinite;
 }
-.hero-contact a{
+.ticker-track span{
   font-family:var(--font-display);
-  letter-spacing:1px;
-  color:var(--gold-soft);
-  font-weight:600;
+  font-size:14px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#D8DEEC;
+  padding:0 18px;
+  white-space:nowrap;
 }
-.hero-contact a:hover{color:#fff;}
+.ticker-track span.dot{color:var(--gold-soft);padding:0 6px;}
+@keyframes ticker-scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+@media (prefers-reduced-motion: reduce){
+  .ticker-track{animation:none;}
+}
 
 /* ---------- Hero (landing) ---------- */
 .hero{
@@ -446,11 +484,207 @@ nav.mainnav a.active{
   margin-bottom:8px;
 }
 
+/* ---------- Why Life Insurance — orbit diagram ---------- */
+.why-section{
+  max-width:1180px;
+  margin:0 auto;
+  padding:64px 32px 20px;
+  text-align:center;
+}
+.why-section .section-head{
+  max-width:640px;
+  margin:0 auto 30px;
+}
+.why-section h2{
+  font-family:var(--font-display);
+  font-size:clamp(26px,3.4vw,36px);
+  color:var(--navy);
+  letter-spacing:.5px;
+  margin:0 0 10px;
+}
+.why-section .section-head p{
+  color:var(--slate);
+  font-size:15px;
+  margin:0;
+}
+.orbit-diagram{width:100%;height:auto;max-width:1000px;margin:0 auto;display:block;}
+.orbit-diagram .node-label{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:20px;
+  fill:#fff;
+}
+.orbit-diagram .hub-label{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:34px;
+  letter-spacing:.5px;
+  fill:#fff;
+}
+
+/* ---------- Category section (What We Sell) ---------- */
+.category-section{
+  max-width:1180px;
+  margin:0 auto;
+  padding:56px 32px 70px;
+}
+.category-section .section-head{
+  text-align:center;
+  max-width:640px;
+  margin:0 auto 40px;
+}
+.category-section h2{
+  font-family:var(--font-display);
+  font-size:clamp(26px,3.4vw,36px);
+  color:var(--navy);
+  letter-spacing:.5px;
+  margin:0 0 10px;
+}
+.category-section .section-head p{
+  color:var(--slate);
+  font-size:15px;
+  margin:0;
+}
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+@media (max-width:860px){.category-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.category-grid{grid-template-columns:1fr;}}
+
+.cat-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:28px 24px 26px;
+  text-align:left;
+  box-shadow:0 10px 24px -18px rgba(10,26,60,.35);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.cat-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 32px -16px rgba(10,26,60,.4);
+  border-color:var(--blue-light);
+}
+.cat-icon{
+  width:52px;height:52px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+}
+.cat-card h3{
+  font-family:var(--font-display);
+  font-size:18px;
+  letter-spacing:.5px;
+  color:var(--navy);
+  margin:0;
+}
+.cat-card p{
+  margin:0;
+  font-size:13.5px;
+  color:var(--slate);
+  flex-grow:1;
+}
+.cat-card .go{
+  font-size:11px;
+  letter-spacing:2px;
+  font-family:var(--font-display);
+  color:var(--blue);
+  text-transform:uppercase;
+}
+
+/* ---------- About Us: narrative + team photo ---------- */
+.about-narrative{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+  margin-bottom:10px;
+}
+@media (max-width:800px){.about-narrative{grid-template-columns:1fr;}}
+.about-narrative img{
+  border-radius:12px;
+  box-shadow:0 16px 30px -18px rgba(10,26,60,.5);
+}
+.about-narrative .about-copy h2{
+  font-family:var(--font-display);
+  font-size:28px;
+  color:var(--navy);
+  margin:0 0 14px;
+  letter-spacing:.5px;
+}
+.about-narrative .about-copy p{
+  color:var(--slate);
+  font-size:15px;
+  margin:0 0 14px;
+}
+.about-narrative .about-copy p:last-child{margin-bottom:0;}
+
+/* ---------- 5F Pillars (About Us — non-clickable) ---------- */
+.pillars-section{margin-top:52px;}
+.pillars-section .section-head{text-align:center;max-width:620px;margin:0 auto 34px;}
+.pillar-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+}
+@media (max-width:900px){.pillar-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:560px){.pillar-grid{grid-template-columns:repeat(2,1fr);}}
+
+.pillar-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:26px 16px 22px;
+  text-align:center;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.pillar-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 18px 28px -16px rgba(10,26,60,.35);
+}
+.pillar-badge{
+  width:64px;height:64px;
+  border-radius:50%;
+  margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 18px -8px rgba(0,0,0,.35);
+}
+.pillar-badge.faith{background:radial-gradient(circle at 30% 25%,#8A6CF2,#6C4FF0);}
+.pillar-badge.family{background:radial-gradient(circle at 30% 25%,#4E7CFF,#1E4FD8);}
+.pillar-badge.finance{background:radial-gradient(circle at 30% 25%,#33C77E,#0F9D57);}
+.pillar-badge.fitness{background:radial-gradient(circle at 30% 25%,#F17B67,#E14F37);}
+.pillar-badge.fun{background:radial-gradient(circle at 30% 25%,#FFC15E,#F2A93B);}
+.pillar-card h3{
+  font-family:var(--font-display);
+  font-size:16px;
+  letter-spacing:1px;
+  color:var(--navy);
+  margin:0 0 4px;
+}
+.pillar-card .pillar-tag{
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:.5px;
+  color:var(--slate);
+  margin:0 0 10px;
+  text-transform:uppercase;
+}
+.pillar-card p.pillar-desc{
+  font-size:13px;
+  color:var(--slate);
+  margin:0;
+}
+
 /* ---------- Footer ---------- */
 footer{
   background:var(--navy-deep);
   color:#96A0B8;
-  padding:36px 32px;
+  padding:36px 32px 0;
   margin-top:60px;
 }
 .footer-inner{
@@ -462,9 +696,23 @@ footer{
   flex-wrap:wrap;
   gap:12px;
   font-size:12px;
+  padding-bottom:22px;
 }
 .footer-inner .fmark{
   font-family:var(--font-display);
   letter-spacing:2px;
   color:#D8DEEC;
+}
+.powered-by{
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  padding:14px 0;
+  font-size:11.5px;
+  letter-spacing:1px;
+  color:#6B7690;
+}
+.powered-by strong{
+  color:#B9C2D6;
+  font-family:var(--font-display);
+  letter-spacing:1px;
 }

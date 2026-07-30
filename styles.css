@@ -688,6 +688,15 @@ nav.mainnav a.active{
 .roster-column.col-tony .roster-avatar{background:linear-gradient(135deg,#0F9D57,#33C77E);}
 .roster-column.col-sergio .roster-avatar{background:linear-gradient(135deg,#6C4FF0,#8A6CF2);}
 
+.roster-item.placeholder{
+  color:var(--slate-light);
+  font-style:italic;
+}
+.roster-item.placeholder .roster-avatar{
+  background:#D8DEEC !important;
+  color:#8890A0;
+}
+
 /* ---------- Meet the Team ---------- */
 .team-grid{
   display:grid;
@@ -701,7 +710,7 @@ nav.mainnav a.active{
   position:relative;
   border-radius:16px;
   overflow:hidden;
-  aspect-ratio:380/550;
+  aspect-ratio:5/6;
   box-shadow:0 16px 30px -16px rgba(10,26,60,.4);
 }
 .team-card img{

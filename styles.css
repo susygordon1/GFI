@@ -3,7 +3,7 @@
    Design tokens
    ============================================ */
 :root{
-  --navy-deep:   #061127;
+  --navy-deep:   #011037;
   --navy:        #0A1A3C;
   --blue:        #1E4FD8;
   --blue-light:  #4E7CFF;
@@ -82,6 +82,11 @@ a{color:inherit;text-decoration:none;}
   align-items:center;
   gap:12px;
 }
+.brand-logo{
+  height:50px;
+  width:auto;
+  display:block;
+}
 .brand-mark{
   display:flex;
   align-items:center;
@@ -154,13 +159,21 @@ nav.mainnav a.active{
 /* ---------- Hero image banner ---------- */
 .hero-banner{
   width:100%;
-  line-height:0;
-  background:var(--navy-deep);
+  background:linear-gradient(160deg,var(--red-deep),var(--red) 60%,var(--red-deep));
+  padding:44px 6vw;
+  display:flex;
+  justify-content:center;
 }
 .hero-banner img{
   width:100%;
+  max-width:1180px;
   height:auto;
   display:block;
+  border-radius:14px;
+  box-shadow:0 26px 60px -20px rgba(0,0,0,.6);
+}
+@media (max-width:700px){
+  .hero-banner{padding:26px 5vw;}
 }
 
 /* ---------- Pillar ticker (replaces phone strip) ---------- */

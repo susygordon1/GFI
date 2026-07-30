@@ -9,6 +9,9 @@
   --blue-light:  #4E7CFF;
   --gold:        #C9A227;
   --gold-soft:   #E4C766;
+  --red:         #8C1C24;
+  --red-deep:    #5C1116;
+  --red-soft:    #B23A42;
   --bg:          #F4F7FC;
   --panel:       #FFFFFF;
   --ink:         #16203A;
@@ -1066,4 +1069,50 @@ footer{
   color:#B9C2D6;
   font-family:var(--font-display);
   letter-spacing:1px;
+}
+
+/* ============================================
+   RED / WHITE / BLUE THEME TEST — scoped to
+   body.theme-red so other pages are unaffected
+   until this direction is approved.
+   ============================================ */
+body.theme-red .topbar{
+  background:linear-gradient(180deg,var(--red),var(--red-deep));
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+body.theme-red .call-btn{
+  background:linear-gradient(135deg,#fff,#E9EDF5);
+  color:var(--red-deep) !important;
+}
+
+body.theme-red .ticker-wrap{
+  background:var(--red-deep);
+  border-top-color:rgba(255,255,255,.15);
+  border-bottom-color:rgba(255,255,255,.15);
+}
+body.theme-red .ticker-track span{color:#fff;}
+body.theme-red .ticker-track span.dot{color:var(--gold-soft);}
+
+body.theme-red .why-band{
+  background:linear-gradient(165deg,var(--red) 0%,var(--red-deep) 100%);
+  padding-bottom:8px;
+}
+body.theme-red .why-band .eyebrow{color:var(--gold-soft);}
+body.theme-red .why-band .eyebrow::before,
+body.theme-red .why-band .eyebrow::after{
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),rgba(255,255,255,.7));
+}
+body.theme-red .why-band h2{color:#fff;}
+body.theme-red .why-band .section-head p{color:rgba(255,255,255,.85);}
+
+body.theme-red .stars-divider{
+  text-align:center;
+  color:var(--gold-soft);
+  letter-spacing:14px;
+  font-size:14px;
+  padding:26px 0 6px;
+}
+
+body.theme-red footer{
+  background:linear-gradient(180deg,var(--navy-deep),var(--red-deep));
 }

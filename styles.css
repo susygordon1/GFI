@@ -160,20 +160,20 @@ nav.mainnav a.active{
 .hero-banner{
   width:100%;
   background:linear-gradient(160deg,var(--red-deep),var(--red) 60%,var(--red-deep));
-  padding:44px 6vw;
+  padding:22px 3vw;
   display:flex;
   justify-content:center;
 }
 .hero-banner img{
   width:100%;
-  max-width:1180px;
+  max-width:1400px;
   height:auto;
   display:block;
-  border-radius:14px;
-  box-shadow:0 26px 60px -20px rgba(0,0,0,.6);
+  border-radius:10px;
+  box-shadow:0 20px 44px -18px rgba(0,0,0,.6);
 }
 @media (max-width:700px){
-  .hero-banner{padding:26px 5vw;}
+  .hero-banner{padding:14px 3vw;}
 }
 
 /* ---------- Pillar ticker (replaces phone strip) ---------- */

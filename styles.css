@@ -780,6 +780,7 @@ nav.mainnav a.active{
   display:block;
 }
 .lb-card.rank-1 .lb-photo{width:104px;height:104px;}
+.lb-card.rank-1 .lb-placeholder-photo{width:104px;height:104px;}
 .lb-placeholder-photo{
   width:88px;height:88px;
   border-radius:50%;

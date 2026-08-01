@@ -22,6 +22,9 @@
       <a href="announcements.html">Announcements</a>
       <a href="events.html">Events</a>
     </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('is-active'); document.querySelector('.mainnav').classList.toggle('open'); this.setAttribute('aria-expanded', this.classList.contains('is-active'));">
+      <span></span><span></span><span></span>
+    </button>
     <div class="topbar-right">
       <a class="call-btn" href="tel:5555555555">&#9742; 555-555-5555</a>
     </div>
@@ -75,5 +78,16 @@
   <div class="powered-by">Powered by <a href="https://www.megamissionmedia.com" target="_blank" rel="noopener"><strong>Mega Mission Media</strong></a></div>
 </footer>
 
+
+<script>
+  document.addEventListener('click', function(e){
+    if (e.target.closest('.mainnav a')) {
+      var nav = document.querySelector('.mainnav');
+      var toggle = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('open');
+      if (toggle) toggle.classList.remove('is-active');
+    }
+  });
+</script>
 </body>
 </html>

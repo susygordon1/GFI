@@ -1148,7 +1148,7 @@ footer{
   max-width:1180px;
   margin:0 auto;
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   align-items:center;
   flex-wrap:wrap;
   gap:12px;
@@ -1463,7 +1463,7 @@ body.theme-red footer{
   color:var(--slate);
   line-height:1.65;
   max-width:720px;
-  margin:0 auto;
+  margin:0 auto 16px;
 }
 .story-grid{
   display:grid;

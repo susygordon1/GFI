@@ -14,7 +14,7 @@
 <div class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo-9lf-navy.png" alt="9LF — 9 Line Financial">
+      <img class="brand-logo" src="logo-9lf-navy.png" alt="9-LF — 9-Line Financial">
     </a>
     <nav class="mainnav">
       <a href="index.html" class="active">Home</a>
@@ -26,14 +26,11 @@
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('is-active'); document.querySelector('.mainnav').classList.toggle('open'); this.setAttribute('aria-expanded', this.classList.contains('is-active'));">
       <span></span><span></span><span></span>
     </button>
-    <div class="topbar-right">
-      <a class="call-btn" href="tel:4697327104">&#9742; 469-732-7104</a>
-    </div>
   </div>
 </div>
 
 <section class="hero-banner">
-  <img src="hero-freedom.png" alt="9LF — 9 Line Financial, a GFI Global Financial Impact Company. Andrew Fulton, Tony Coronado, Sergio Torre. Military rooted. Family focused. Future driven. Securing Freedom.">
+  <img src="hero-freedom.png" alt="9-LF — 9-Line Financial, a GFI Global Financial Impact Company. Andrew Fulton, Tony Coronado, Sergio Torre. Military rooted. Family focused. Future driven. Securing Freedom.">
 </section>
 
 <div class="ticker-wrap">
@@ -81,6 +78,34 @@
     <span>Fun</span><span class="dot">&#9679;</span>
   </div>
 </div>
+
+<section class="story-section">
+  <div class="section-head">
+    <div class="eyebrow">Why We're Here</div>
+    <h2>You Didn't Land Here By Accident.</h2>
+    <p class="lede">Every family who talks to us is looking for the same thing — a plan that actually holds up when life doesn't go the way it's supposed to. That's what 9-Line Financial does: real financial education, real strategies, and real people who've lived through exactly what you're worried about.</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+      </div>
+      <h3>Real People. Real Stories.</h3>
+    </div>
+    <div class="story-card">
+      <div class="story-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <h3>Education First &mdash; Never a Sales Pitch.</h3>
+    </div>
+    <div class="story-card">
+      <div class="story-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg>
+      </div>
+      <h3>Built By People Who've Been There.</h3>
+    </div>
+  </div>
+</section>
 
 <div class="why-band">
 <section class="why-section">
@@ -271,6 +296,49 @@ document.addEventListener('click', function(){
       <span class="go">Explore &rarr;</span>
     </a>
 
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-inner">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Let's Talk About Your Plan</h2>
+    <p class="lede">Have a question, or want to sit down with someone on the team? Send us a note and we'll follow up personally.</p>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a mockup form \u2014 no message was actually sent.');">
+      <div class="form-row">
+        <div>
+          <label for="cf-name">Full Name</label>
+          <input type="text" id="cf-name" placeholder="Jane Smith" required>
+        </div>
+        <div>
+          <label for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" placeholder="(555) 555-5555">
+        </div>
+      </div>
+      <div class="full-row">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" placeholder="jane@email.com" required>
+      </div>
+      <div class="full-row">
+        <label for="cf-topic">What can we help with?</label>
+        <select id="cf-topic">
+          <option>General Question</option>
+          <option>Term Life Insurance</option>
+          <option>Whole Life Insurance</option>
+          <option>Indexed Universal Life (IUL)</option>
+          <option>Annuities</option>
+          <option>Final Expense</option>
+          <option>Business Owner Strategies</option>
+        </select>
+      </div>
+      <div class="full-row">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" rows="4" placeholder="Tell us a bit about what you're looking for..."></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+      <p class="form-note">This is a mockup form for demonstration &mdash; it does not currently send anywhere.</p>
+    </form>
   </div>
 </section>
 

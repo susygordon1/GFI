@@ -738,6 +738,17 @@ nav.mainnav a.active{
   color:var(--gold-soft);
   margin:0;
 }
+.team-overlay .team-contact{
+  font-size:12.5px;
+  color:#D8DEEC;
+  margin:8px 0 0;
+  letter-spacing:.3px;
+}
+.team-card{transition:transform .18s ease, box-shadow .18s ease;}
+.team-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 36px -16px rgba(10,26,60,.5);
+}
 
 /* ---------- Recognitions leaderboard ---------- */
 .leaderboard{
@@ -1602,3 +1613,59 @@ body.theme-red footer{
   text-align:center;
   margin-top:14px;
 }
+
+/* ---------- Individual leader profile pages ---------- */
+.profile-hero{
+  background:linear-gradient(135deg,#0A1A3C,#1E4FD8);
+  padding:56px 32px;
+}
+.profile-hero-inner{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.profile-photo{
+  width:160px;height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,.25);
+  box-shadow:0 20px 40px -14px rgba(0,0,0,.5);
+}
+.profile-info h1{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4vw,42px);
+  color:#fff;
+  margin:0 0 6px;
+}
+.profile-info .profile-role{
+  font-family:var(--font-display);
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+  margin:0 0 16px;
+}
+.profile-contact-row{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.profile-contact-row a, .profile-contact-row span{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
+  color:#E4E9F5;
+}
+.profile-contact-row a{font-weight:600;}
+.profile-contact-row a:hover{color:var(--gold-soft);}
+
+.profile-bio{
+  max-width:760px;
+  margin:0 auto;
+  padding:56px 32px;
+}
+.profile-bio .callout{margin-top:8px;}

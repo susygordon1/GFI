@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sergio Torre — 9-LF Team Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon-9lf-v2.png">
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo-9lf-navy.png" alt="9-LF — 9-Line Financial">
+    </a>
+    <nav class="mainnav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="team.html" class="active">Meet the Team</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="events.html">Events</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('is-active'); document.querySelector('.mainnav').classList.toggle('open'); this.setAttribute('aria-expanded', this.classList.contains('is-active'));">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+<section class="profile-hero">
+  <div class="profile-hero-inner">
+    <img class="profile-photo" src="sergio-torre.jpg" alt="Sergio Torre">
+    <div class="profile-info">
+      <h1>Sergio Torre</h1>
+      <p class="profile-role">Financial Advisor</p>
+      <div class="profile-contact-row">
+        <a href="tel:2819676167">&#9742; 281-967-6167</a>
+        <span>&#128205; CST</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="profile-bio">
+  <div class="callout">
+    <h4>Full bio coming soon</h4>
+    <p>Placeholder profile page — swap in Sergio's full bio, photo gallery, and personal story once finalized.</p>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <img class="footer-logo" src="logo-9lf-navy.png" alt="9-LF — 9-Line Financial">
+    <div class="footer-copyright">&copy; 2026 9-Line Financial (9-LF). All rights reserved.</div>
+  </div>
+  <div class="parent-company">
+    <span>A proud part of</span>
+    <a href="https://globalfinancialimpact.com/" target="_blank" rel="noopener">
+      <img src="gfi-parent-logo.png" alt="GFI Global Financial Impact">
+    </a>
+  </div>
+  <div class="powered-by">Powered by <a href="https://www.megamissionmedia.com" target="_blank" rel="noopener"><strong>Mega Mission Media</strong></a></div>
+</footer>
+
+</body>
+</html>

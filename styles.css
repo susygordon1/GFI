@@ -673,6 +673,12 @@ nav.mainnav a.active{
   padding:6px 4px;
   border-radius:6px;
 }
+.roster-item .roster-tz{
+  font-size:11px;
+  color:var(--slate-light);
+  font-weight:600;
+  letter-spacing:.5px;
+}
 .roster-item:hover{background:var(--bg);}
 .roster-avatar{
   width:30px;height:30px;

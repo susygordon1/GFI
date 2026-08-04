@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juvenile IUL — GFI Team Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon-9lf-v2.png">
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="logo-9lf-navy.png" alt="9-LF — 9-Line Financial">
+    </a>
+    <nav class="mainnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="events.html">Events</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('is-active'); document.querySelector('.mainnav').classList.toggle('open'); this.setAttribute('aria-expanded', this.classList.contains('is-active'));">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+<section class="page-hero" style="background:linear-gradient(135deg,#0A1A3C,#1E4FD8);">
+  <div class="page-hero-inner">
+    <div class="kicker">Coverage Category</div>
+    <h1>Juvenile Indexed Universal Life (IUL)</h1>
+    <p class="tag">Permanent coverage started early, so tax-free growth has decades to work in their favor.</p>
+  </div>
+</section>
+<div class="section">
+  <h2>What it is</h2>
+  <p class="section-sub">A Juvenile IUL is a permanent life insurance policy purchased on a child's life. It locks in low-cost, lifelong coverage while they're young and healthy, and builds cash value with tax-free growth they can access later — for college, a first home, or a head start on retirement.</p>
+  <div class="topic-grid">
+    <div class="topic-card">
+      <h3>Who it's for</h3>
+      <p>Parents or grandparents who want to give a child a financial head start — and lock in insurability before age or health make coverage more expensive.</p>
+    </div>
+    <div class="topic-card">
+      <h3>How it works</h3>
+      <p>Premiums build cash value inside the policy, growing tax-free and tied to a market index, while the child is covered for life.</p>
+    </div>
+    <div class="topic-card">
+      <h3>Where it can help later</h3>
+      <p>The policy's cash value can be accessed as an adult for college, a first home, or supplemental retirement income.</p>
+    </div>
+    <div class="topic-card">
+      <h3>Talking point</h3>
+      <p>"The best time to start this is the day it's cheapest — while they're young and healthy."</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>Compliance reminder</h4>
+    <p>All client-facing language on this page is a placeholder and must be reviewed and approved before use in the field.</p>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <img class="footer-logo" src="logo-9lf-navy.png" alt="9-LF — 9-Line Financial">
+    <div class="footer-copyright">&copy; 2026 9-Line Financial (9-LF). All rights reserved.</div>
+  </div>
+  <div class="parent-company">
+    <span>A proud part of</span>
+    <a href="https://globalfinancialimpact.com/" target="_blank" rel="noopener">
+      <img src="gfi-parent-logo.png" alt="GFI Global Financial Impact">
+    </a>
+  </div>
+  <div class="powered-by">Powered by <a href="https://www.megamissionmedia.com" target="_blank" rel="noopener"><strong>Mega Mission Media</strong></a></div>
+</footer>
+
+
+<script>
+  document.addEventListener('click', function(e){
+    if (e.target.closest('.mainnav a')) {
+      var nav = document.querySelector('.mainnav');
+      var toggle = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('open');
+      if (toggle) toggle.classList.remove('is-active');
+    }
+  });
+</script>
+</body>
+</html>

@@ -496,6 +496,14 @@ nav.mainnav a.active{
   white-space:nowrap;
 }
 .zoom-id-badge strong{display:block;font-size:14px;color:var(--blue);margin-top:2px;}
+.zoom-id-badge .zoom-passcode{
+  display:block;
+  font-size:10.5px;
+  color:var(--slate);
+  margin-top:4px;
+  font-family:var(--font-body);
+  letter-spacing:0;
+}
 
 .recurring-tag{
   display:inline-block;

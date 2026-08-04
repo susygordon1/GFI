@@ -936,6 +936,11 @@ nav.mainnav a.active{
   border-radius:4px;
   margin-bottom:8px;
 }
+.real-event-card .re-tag.restricted{
+  background:rgba(228,35,39,.12);
+  color:var(--red-accent);
+  margin-left:8px;
+}
 .real-event-card h3{
   font-family:var(--font-display);
   font-size:19px;

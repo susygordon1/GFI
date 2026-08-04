@@ -1154,6 +1154,23 @@ nav.mainnav a.active{
   margin:0;
 }
 
+.callout .submit-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  padding:12px 20px;
+  border-radius:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+  color:var(--navy-deep);
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.callout .submit-btn:hover{opacity:.9;}
+
 /* ---------- Footer ---------- */
 footer{
   background:var(--navy-deep);

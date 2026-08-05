@@ -1815,3 +1815,19 @@ body.theme-red footer{
   color:var(--slate);
 }
 .bio-quote p:last-child{margin-bottom:0;}
+.profile-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:32px;
+}
+.profile-gallery img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 10px 24px -10px rgba(0,0,0,.18);
+}
+@media (max-width:600px){
+  .profile-gallery{grid-template-columns:1fr;}
+}

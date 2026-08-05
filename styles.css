@@ -819,6 +819,25 @@ a.roster-item:hover{background:var(--bg);}
   transform:translateY(-4px);
   box-shadow:0 22px 36px -16px rgba(10,26,60,.5);
 }
+.team-card.placeholder{
+  background:linear-gradient(135deg,#0A1A3C,#1E4FD8);
+  cursor:default;
+}
+.team-card.placeholder:hover{transform:none;box-shadow:0 16px 30px -16px rgba(10,26,60,.4);}
+.team-placeholder-icon{
+  position:absolute;
+  top:40%;left:50%;
+  transform:translate(-50%,-50%);
+  width:60px;height:60px;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:19px;
+}
+.team-overlay .team-role.pending{color:#B9C2D6;font-style:italic;}
 
 /* ---------- Recognitions leaderboard ---------- */
 .leaderboard{

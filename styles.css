@@ -396,6 +396,19 @@ nav.mainnav a.active{
   font-size:14px;
   color:var(--slate);
 }
+.topic-card .topic-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:14px;
+  color:var(--slate);
+}
+.topic-card .topic-list li{
+  margin:0 0 8px;
+}
+.topic-card .topic-list li:last-child{
+  margin-bottom:0;
+}
 .topic-card .placeholder-note{
   display:inline-block;
   margin-top:10px;
@@ -1774,3 +1787,31 @@ body.theme-red footer{
   padding:56px 32px;
 }
 .profile-bio .callout{margin-top:8px;}
+.bio-section{margin-bottom:36px;}
+.bio-section h3{
+  font-family:var(--font-display);
+  font-size:20px;
+  letter-spacing:.3px;
+  color:var(--navy);
+  margin:0 0 12px;
+}
+.bio-section p{
+  margin:0 0 12px;
+  font-size:15px;
+  line-height:1.7;
+  color:var(--ink);
+}
+.bio-section p:last-child{margin-bottom:0;}
+.bio-quote{
+  border-left:3px solid var(--gold);
+  padding:4px 0 4px 20px;
+  margin:32px 0 0;
+}
+.bio-quote p{
+  margin:0 0 10px;
+  font-style:italic;
+  font-size:15px;
+  line-height:1.6;
+  color:var(--slate);
+}
+.bio-quote p:last-child{margin-bottom:0;}

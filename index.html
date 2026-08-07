@@ -280,40 +280,80 @@ document.addEventListener('click', function(){
     <h2>Let's Talk About Your Plan</h2>
     <p class="lede">Have a question, or want to sit down with someone on the team? Send us a note and we'll follow up personally.</p>
 
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a mockup form \u2014 no message was actually sent.');">
+    <form class="contact-form" action="https://formspree.io/f/xbgrlzle" method="POST" id="cf-form">
       <div class="form-row">
         <div>
           <label for="cf-name">Full Name</label>
-          <input type="text" id="cf-name" placeholder="Jane Smith" required>
+          <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
         </div>
         <div>
           <label for="cf-phone">Phone</label>
-          <input type="tel" id="cf-phone" placeholder="(555) 555-5555">
+          <input type="tel" id="cf-phone" name="phone" placeholder="(555) 555-5555">
         </div>
       </div>
       <div class="full-row">
         <label for="cf-email">Email</label>
-        <input type="email" id="cf-email" placeholder="jane@email.com" required>
+        <input type="email" id="cf-email" name="email" placeholder="jane@email.com" required>
       </div>
       <div class="full-row">
         <label>What can we help with?</label>
         <div class="topic-picker">
-          <label class="topic-option"><input type="radio" name="cf-topic" value="General Question" checked><span>General Question</span></label>
-          <label class="topic-option"><input type="radio" name="cf-topic" value="Term Life Insurance"><span>Term Life Insurance</span></label>
-          <label class="topic-option"><input type="radio" name="cf-topic" value="Whole Life Insurance"><span>Whole Life Insurance</span></label>
-          <label class="topic-option"><input type="radio" name="cf-topic" value="Indexed Universal Life (IUL)"><span>Indexed Universal Life (IUL)</span></label>
-          <label class="topic-option"><input type="radio" name="cf-topic" value="Annuities"><span>Annuities</span></label>
-          <label class="topic-option"><input type="radio" name="cf-topic" value="Final Expense"><span>Final Expense</span></label>
-          <label class="topic-option"><input type="radio" name="cf-topic" value="Juvenile IUL"><span>Juvenile IUL</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="General Question" checked><span>General Question</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="Term Life Insurance"><span>Term Life Insurance</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="Whole Life Insurance"><span>Whole Life Insurance</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="Indexed Universal Life (IUL)"><span>Indexed Universal Life (IUL)</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="Annuities"><span>Annuities</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="Final Expense"><span>Final Expense</span></label>
+          <label class="topic-option"><input type="radio" name="topic" value="Juvenile IUL"><span>Juvenile IUL</span></label>
         </div>
       </div>
       <div class="full-row">
         <label for="cf-message">Message</label>
-        <textarea id="cf-message" rows="4" placeholder="Tell us a bit about what you're looking for..."></textarea>
+        <textarea id="cf-message" name="message" rows="4" placeholder="Tell us a bit about what you're looking for..."></textarea>
       </div>
-      <button type="submit">Send Message</button>
-      <p class="form-note">This is a mockup form for demonstration &mdash; it does not currently send anywhere.</p>
+      <button type="submit" id="cf-submit-btn">Send Message</button>
+      <p id="cf-status" class="form-note" style="display:none;"></p>
     </form>
+    <script>
+      (function () {
+        var form = document.getElementById('cf-form');
+        var status = document.getElementById('cf-status');
+        var btn = document.getElementById('cf-submit-btn');
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (response) {
+            if (response.ok) {
+              form.reset();
+              status.textContent = "Thanks \u2014 your message has been sent. We'll follow up personally soon.";
+              status.style.color = '#4E7CFF';
+              status.style.display = 'block';
+              btn.textContent = 'Send Message';
+              btn.disabled = false;
+            } else {
+              response.json().then(function (data) {
+                status.textContent = (data && data.errors) ? data.errors.map(function(er){return er.message;}).join(', ') : 'Something went wrong \u2014 please try again or call us directly.';
+                status.style.color = '#E42327';
+                status.style.display = 'block';
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+              });
+            }
+          }).catch(function () {
+            status.textContent = 'Something went wrong \u2014 please try again or call us directly.';
+            status.style.color = '#E42327';
+            status.style.display = 'block';
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+          });
+        });
+      })();
+    </script>
   </div>
 </section>
 
